@@ -9,11 +9,13 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Slf4j
 @Component
 public class ChatHandler extends TextWebSocketHandler {
 
-    private List<WebSocketSession> sessions = new ArrayList<>();
+    private static List<WebSocketSession> sessions = new ArrayList<>();
+
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         sessions.add(session);
@@ -24,6 +26,9 @@ public class ChatHandler extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         String msg = message.getPayload();
         log.info("message : " + msg);
+        for (WebSocketSession s : sessions) {
+            s.sendMessage(message);
+        }
     }
 
     @Override

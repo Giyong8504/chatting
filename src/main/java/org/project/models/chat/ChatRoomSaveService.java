@@ -16,7 +16,7 @@ public class ChatRoomSaveService {
         ChatRoom room = null;
         if (roomNo != null) {
             room = repository.findById(roomNo).orElseThrow(RoomNotFoundException::new);
-        }else {
+        } else {
             room = new ChatRoom();
         }
 

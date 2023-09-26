@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 import java.util.ResourceBundle;
 
 public class CommonException extends RuntimeException {
-
     private HttpStatus status;
+
     protected final static ResourceBundle validations;
     protected final static ResourceBundle errors;
 

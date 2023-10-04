@@ -11,7 +11,7 @@ export const StyleButton = styled.button`
       border: 10px solid blue;
       border-radius: 5px;
     `}
-    
+
     &:hover {
       background: gray;
     }

@@ -1,5 +1,8 @@
-const Rooms = () => {
-    return <h1>채팅방</h1>;
+import { useParams } from "react-router-dom";
+
+const Room = () => {
+    const { roomNo } = useParams();
+    return <h1>채팅방{roomNo}</h1>;
 };
 
-export default Rooms;
+export default Room;

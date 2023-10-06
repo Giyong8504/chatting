@@ -6,10 +6,11 @@ const Box = styled.div`
     color: #000;
     font-weight: bold;
     font-size: ${fontSizes.small};
-    padding: 3px 5px;
+    padding: 3px 5px; 
     text-align: center;
-    magin: 5px;
+    margin: 5px; 
 `;
+
 const ErrorMessage = ({children}) => {
     return <Box>{children}</Box>
 }

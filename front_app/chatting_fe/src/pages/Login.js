@@ -25,8 +25,6 @@ const Login = () => {
             setMessage("비밀번호를 입력하세요.");
             return;
         }
-
-        setMessage("");
     };
 
     return (

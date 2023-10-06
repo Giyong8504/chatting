@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 const Join = () => {
     const isLogin = true;
     if (isLogin) {
-        <Navigate to="/" replace={true} />
+        return <Navigate to="/" replace={true} />
     }
 
     return <h1>회원가입</h1>;

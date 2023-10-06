@@ -3,15 +3,22 @@ import CommonLayout from './layouts/CommonLayout';
 import MainPage from './pages/MainPage';
 import Rooms from './pages/Rooms';
 import Room from './pages/Room';
+import Join from './pages/Join';
+import Login from './pages/Login';
+
 import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
-    <Routes>
+    // 경로 연결
+    <Routes> 
       <Route element={<CommonLayout />}>
         <Route path="/" element={<MainPage />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/room" element={<Room />} />
+        <Route path="/room" element={<Rooms />} />
+        <Route path="/room/:roomNo" element={<Room />} />
+        <Route path=":roomNo" element={<Room />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 export const StyleButton = styled.button`
-    width: 300px;
+    width: ${props => props.width || '300px'};
     height: 50px;
     background: ${props => props.bg || 'black'};
     border: 0;
@@ -11,7 +11,7 @@ export const StyleButton = styled.button`
       border: 10px solid blue;
       border-radius: 5px;
     `}
-    
+
     &:hover {
       background: gray;
     }

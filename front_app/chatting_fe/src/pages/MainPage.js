@@ -1,5 +1,6 @@
+import { Navigate } from "react-router-dom";
 const MainPage = () => {
-    return <h1>메인페이지!</h1>;
+    return <Navigate to="/room" replace={ture} />
 };
 
 export default MainPage;

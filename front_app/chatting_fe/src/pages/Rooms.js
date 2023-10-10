@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useCallback } from "react";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -27,8 +28,9 @@ const FormBox = styled.form`
         width: 100%;
         text-align: center;
     }
-    input:focus{
-        border-color: #000;
+    
+    input:focus {
+        border-color: #000; 
     }
 
     button { 
@@ -44,15 +46,15 @@ const Rooms = () => {
 
     const updateRooms = useCallback(() => {
         getRooms()
-        .then((res) => {
-            setRooms(res.data);
-            setLoading(false);
-        })
-        .catch((err) => {
-            console.error(err);
-            setMessage("방목록 조회 실패...");
-            setLoading(false);
-        });
+            .then((res) => {
+                setRooms(res.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error(err);
+                setMessage("방목록 조회 실패...");
+                setLoading(false);
+            });
     }, [])
 
     useEffect(() => updateRooms(), []);
@@ -62,16 +64,17 @@ const Rooms = () => {
         try {
             if (!form.roomNm) {
                 e.target.roomNm.focus();
+
                 throw new Error("방 이름을 입력하세요.");
             }
 
             registerRoom(form)
-                .then((res) => {
-                    setForm({roomNm:'', max: ''});
-
+                .then(() => {
+                    setForm({roomNm: '', max: ''});
                     updateRooms();
                 })
                 .catch((err) => console.error(err));
+                
         } catch(err) {
             setMessage(err.message);
         }

@@ -2,7 +2,6 @@ import axios from 'axios';
 
 export default function apiRequest (url, method, data) {
     url = process.env.REACT_APP_API_URL + url;
-    console.log(url);
     method = method || "GET";
     data = data || {};
 
